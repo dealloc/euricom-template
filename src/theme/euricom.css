@@ -1,0 +1,290 @@
+/*
+ * Euricom brand theme for reveal.js
+ * Colors: Charcoal #1D252D | Green #00FF00 | White #FFFFFF
+ * Accents: Midnight #014046 | Light Midnight #809FA2 | Steel Gray #CBD9DA
+ * Font: Montserrat (Google Fonts)
+ */
+
+:root {
+    --r-background-color: #1D252D;
+
+    --r-main-font: 'Montserrat', 'Avenir Next', system-ui, sans-serif;
+    --r-main-font-size: 36px;
+    --r-main-color: #ffffff;
+
+    --r-heading-font: 'Montserrat', 'Avenir Next', system-ui, sans-serif;
+    --r-heading-color: #ffffff;
+    --r-heading-font-weight: 600;
+    --r-heading-line-height: 1.15;
+    --r-heading-letter-spacing: -0.02em;
+    --r-heading-text-transform: none;
+    --r-heading-text-shadow: none;
+    --r-heading-margin: 0 0 24px 0;
+
+    --r-heading1-size: 2.2em;
+    --r-heading2-size: 1.5em;
+    --r-heading3-size: 1.2em;
+    --r-heading4-size: 1em;
+
+    --r-code-font: ui-monospace, 'Cascadia Code', Consolas, monospace;
+    --r-block-margin: 20px;
+
+    --r-link-color: #00ff00;
+    --r-link-color-hover: #66ff66;
+
+    --r-selection-background-color: #00ff00;
+    --r-selection-color: #1D252D;
+
+    /* Euricom brand tokens */
+    --ec-green: #00ff00;
+    --ec-charcoal: #1D252D;
+    --ec-midnight: #014046;
+    --ec-light-midnight: #809FA2;
+    --ec-steel: #CBD9DA;
+    --ec-light-steel: #F1F5F6;
+}
+
+/* ─── Viewport ─────────────────────────────────────────────────────────── */
+.reveal-viewport {
+    background: var(--ec-charcoal);
+}
+
+.reveal {
+    font-family: var(--r-main-font);
+    font-size: var(--r-main-font-size);
+    font-weight: 400;
+    color: var(--r-main-color);
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────────── */
+.reveal ::selection {
+    color: var(--r-selection-color);
+    background: var(--r-selection-background-color);
+    text-shadow: none;
+}
+
+/* ─── Headings ───────────────────────────────────────────────────────────── */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    margin: var(--r-heading-margin);
+    color: var(--r-heading-color);
+    font-family: var(--r-heading-font);
+    font-weight: var(--r-heading-font-weight);
+    line-height: var(--r-heading-line-height);
+    letter-spacing: var(--r-heading-letter-spacing);
+    text-transform: var(--r-heading-text-transform);
+    text-shadow: var(--r-heading-text-shadow);
+    word-wrap: break-word;
+}
+
+.reveal h1 {
+    font-size: var(--r-heading1-size);
+    color: var(--ec-green);
+    font-weight: 700;
+}
+
+.reveal h2 {
+    font-size: var(--r-heading2-size);
+}
+
+.reveal h3 {
+    font-size: var(--r-heading3-size);
+    font-weight: 500;
+}
+
+.reveal h4 {
+    font-size: var(--r-heading4-size);
+    font-weight: 500;
+}
+
+/* ─── Paragraphs & text ─────────────────────────────────────────────────── */
+.reveal p {
+    margin: var(--r-block-margin) 0;
+    line-height: 1.5;
+}
+
+.reveal strong {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.reveal em {
+    font-style: italic;
+}
+
+/* ─── Links ─────────────────────────────────────────────────────────────── */
+.reveal a {
+    color: var(--r-link-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+    color: var(--r-link-color-hover);
+}
+
+/* ─── Code ───────────────────────────────────────────────────────────────── */
+.reveal code {
+    font-family: var(--r-code-font);
+    font-size: 0.85em;
+    background: rgba(1, 64, 70, 0.6);
+    color: var(--ec-green);
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+}
+
+.reveal pre {
+    display: block;
+    position: relative;
+    width: 90%;
+    margin: var(--r-block-margin) auto;
+    text-align: left;
+    font-size: 0.55em;
+    font-family: var(--r-code-font);
+    line-height: 1.4em;
+    border-radius: 6px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.reveal pre code {
+    display: block;
+    padding: 20px;
+    overflow: auto;
+    max-height: 420px;
+    background: #0d1b22;
+    color: var(--ec-light-steel);
+    border-radius: 0;
+    font-size: 1em;
+}
+
+/* accent bar on top of code blocks */
+.reveal pre::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: var(--ec-green);
+}
+
+/* ─── Lists ──────────────────────────────────────────────────────────────── */
+.reveal ol,
+.reveal ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 0 1em;
+}
+
+.reveal ul {
+    list-style-type: none;
+}
+
+.reveal ul > li::before {
+    content: '▶';
+    color: var(--ec-green);
+    font-size: 0.6em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+
+.reveal ol {
+    list-style-type: decimal;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+    display: block;
+    margin-left: 40px;
+}
+
+.reveal li {
+    margin-bottom: 0.4em;
+    line-height: 1.5;
+}
+
+/* ─── Blockquote ─────────────────────────────────────────────────────────── */
+.reveal blockquote {
+    display: block;
+    position: relative;
+    width: 80%;
+    margin: var(--r-block-margin) auto;
+    padding: 0.8em 1.2em;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--ec-green);
+    border-radius: 0 4px 4px 0;
+}
+
+/* ─── Tables ─────────────────────────────────────────────────────────────── */
+.reveal table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.reveal table th {
+    font-weight: 600;
+    color: var(--ec-green);
+    border-bottom: 2px solid var(--ec-green);
+    padding: 0.4em 0.8em;
+}
+
+.reveal table td {
+    padding: 0.4em 0.8em;
+    border-bottom: 1px solid rgba(128, 159, 162, 0.3);
+}
+
+/* ─── Images ─────────────────────────────────────────────────────────────── */
+.reveal section img {
+    margin: 15px 0;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    max-width: 100%;
+}
+
+/* ─── Controls ───────────────────────────────────────────────────────────── */
+.reveal .controls {
+    color: var(--ec-green);
+}
+
+/* ─── Progress bar ───────────────────────────────────────────────────────── */
+.reveal .progress {
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--ec-green);
+    height: 3px;
+}
+
+/* ─── Slide number ───────────────────────────────────────────────────────── */
+.reveal .slide-number {
+    color: var(--ec-light-midnight);
+    background: transparent;
+    font-family: var(--r-main-font);
+    font-size: 0.45em;
+    font-weight: 500;
+}
+
+/* ─── kbd ────────────────────────────────────────────────────────────────── */
+.reveal kbd {
+    display: inline-block;
+    padding: 0.1em 0.45em;
+    font-size: 0.7em;
+    font-family: var(--r-code-font);
+    color: var(--ec-charcoal);
+    background: var(--ec-green);
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+/* ─── Utility: highlight span ────────────────────────────────────────────── */
+.reveal .green {
+    color: var(--ec-green);
+}
+
+.reveal .muted {
+    color: var(--ec-light-midnight);
+}
